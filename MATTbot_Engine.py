@@ -9,11 +9,16 @@ import numpy as np
 import random
 import string
 
+from HLEngine import HLEngine_audioProcess
+from HLEngine import HLEngine_wiki
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 
 def analyst(raw):
+    nltk.download('punkt')
+    nltk.download('wordnet')
     raw=raw.lower()
     sent_tokens = nltk.sent_tokenize(raw)
     word_tokens = nltk.word_tokenize(raw)

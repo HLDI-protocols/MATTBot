@@ -3,7 +3,7 @@
 
 from gtts import gTTS
 import pygame
-import pyttsx3
+#import pyttsx3
 from playsound import playsound
 
 
@@ -32,6 +32,7 @@ def playAudio(location):
         pygame.mixer.music.load(location)
         pygame.mixer.music.play()
         pygame.event.wait()
+        print("done")
     except:
         return ("HLEngine:playAudio issue detected")
 
