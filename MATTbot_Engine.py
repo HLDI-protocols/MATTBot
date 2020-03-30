@@ -1,27 +1,84 @@
 """
 Author:Er.Akhil P Jacob
-MATTbot Logic 2020
+powered by: HLEngine,MATTbot Logic
+
 
 """
 
-import nltk
-import numpy as np
-import random
-import string
 
-from HLEngine import HLEngine_audioProcess
-from HLEngine import HLEngine_wiki
-
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
+print("\n \n \n")
+print("HL Robotics & Intelligence Presents")
+print("\nMATTbot 2020.( Machine for Artificial Thinking and Talking Console 2020)")
+print("\npowered by HLEngine and MATTbot Logic")
 
 
-def analyst(raw):
-    nltk.download('punkt')
-    nltk.download('wordnet')
+try:
+    import nltk
+    import numpy as np
+    import random
+    import string
+    import time
+    from HLEngine import HLEngine_communications
+    from HLEngine  import HLEngine_sR
+    from HLEngine import HLEngine_wiki
+    from HLEngine import HLEngine_Progressbar
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    HLEngine_Progressbar.progress("MATTbot core")
+    print("\nMATTbotCore: Loaded Core functionalities")
+
+except:
+    print("\nMATTbotCore:Installing missing repositories......\n")
+    
+    from HLEngine import HLEngine_EnvironmentSetup
+    HLEngine_EnvironmentSetup.setup_libraries()
+    
+
+
+
+try:
+    fileR=open("hiveMind/hiveMind.txt","r")
+    raw=fileR.read() 
     raw=raw.lower()
+    HLEngine_Progressbar.progress("hiveMind")
+    print("\nMATTbotCore:Loaded hiveMind......\n")
+except:
+    print("\nloading hiveMind......FAILED")
+
+
+try:
     sent_tokens = nltk.sent_tokenize(raw)
     word_tokens = nltk.word_tokenize(raw)
+    print("\ntokenization......Done ")
+    print("\nMATTbot_Engine status:ARMED")
+
+except:
+    print("\ntokenization......FAILURE ")
+    time.sleep(1)
+    print("\commencing download...... accessing internet ")
+    nltk.download('punkt') 
+    nltk.download('wordnet') 
+    print("\nplease REBOOT MATT 2020 Console")
+
+
+
+
+def commonProtocols():
+    HLEngine_Progressbar.progress("Checking Ports")
+    port=HLEngine_communications.find_Port()
+    return(port)
+
+def gainWisdom():
+    data=HLEngine_wiki.wiki()
+    return(data)
+
+def sentimentalAnalsys():
+    data=HLEngine_sR.sentiment()
+    return(data)
+
+
+
+def analyst(user_param):   
 
 #preprocess
 
@@ -48,7 +105,7 @@ def analyst(raw):
 
     #user response
     def response(user_response):
-        Doodle_response=''
+        MATTbot_response=''
         sent_tokens.append(user_response)    
         TfidfVec = TfidfVectorizer(tokenizer=LemNormalize, stop_words='english')
         tfidf = TfidfVec.fit_transform(sent_tokens)
@@ -58,39 +115,36 @@ def analyst(raw):
         flat.sort()
         req_tfidf = flat[-2]    
         if(req_tfidf==0):
-            Doodle_response=Doodle_response+"I am sorry! I don't understand you"
-            return Doodle_response
+            MATTbot_response="no_data"
+            return MATTbot_response
         else:
-            Doodle_response = Doodle_response+sent_tokens[idx]
-            return Doodle_response
+            MATTbot_response = MATTbot_response+sent_tokens[idx]
+            return MATTbot_response
 
 
 
     #MATTbot response
-
-    flag=True
-    print("MACHINE FOR ARTIFICIAL THINKING AND TALKING (MATT2020) ")
     
-    name="Achacha"
-    print("\nMATTbot: Hi my name is MATTbot, the chat bot. I am at your service "+name)
-    
-    while(flag==True):
-        user_response = input()
-        user_response=user_response.lower()
-        if(user_response!='bye'):
-            if(user_response=='thanks' or user_response=='thank you' or user_response=='thankyou' ):
-                flag=False
-                print("MATTbot: You are welcome.. "+name+"The academic councillor will call you to get feedback")
-            else:
-                if(greeting(user_response)!=None):
-                    print("MATTbot: "+greeting(user_response))
-                else:
-                    print("MATTbot: ",end="")
-                    print(response(user_response))
-                    sent_tokens.remove(user_response)
+    user_response = user_param
+    user_response=user_response.lower()
+    if(user_response!='bye'):
+        if(user_response=='thanks' or user_response=='thank you' or user_response=='thankyou' ):
+            
+            print("MATTbot: You are welcome.. ")
+            return("MATTbot: You are welcome.. ")
         else:
-            flag=False
-            print("MATTbot: Bye! take care.."+name)
+            if(greeting(user_response)!=None):
+                print("MATTbot: "+greeting(user_response))
+                return(greeting(user_response))
+            else:
+                return("MATTbot:"+response(user_response))
+                print("MATTbot: ",end="")
+                print(response(user_response))                
+                sent_tokens.remove(user_response)
+    else:
+       
+        print("MATTbot: Bye! take care..")
+        return("MATTbot: Bye! take care..")
                 
 
 
