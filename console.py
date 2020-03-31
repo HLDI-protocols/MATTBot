@@ -13,6 +13,7 @@ while(True):
     Fight=Consciousness.fight(request)
     responser=Consciousness.superLogic(request)
     hyperLearn=Consciousness.hyperLogic(request)
+    playBoy=Consciousness.playSome(request)
     
     if(fetchBy=="off"):
         break
@@ -49,6 +50,11 @@ while(True):
         flag=0
     else:
         print(hyperLearn)
+
+    if(playBoy==None):
+        flag=0
+    else:
+        print(playBoy)
 
     
 

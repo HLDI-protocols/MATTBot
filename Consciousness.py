@@ -3,6 +3,7 @@ import string
 import MATTbot_Engine
 from HLEngine import HLEngine_Progressbar
 from HLEngine import HLEngine_wordX
+from HLEngine import HLEngine_audioProcess
 
 
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey")
@@ -27,6 +28,9 @@ questions=("what","how","why","who","when","do","which","may")
 
 STUDY_NEW=("learn","study")
 
+MUSIC=("music","song","play")
+
+MUSIC_LIST=("voice/1.mp3","voice/2.mp3","voice/3.mp3")
 
 def greeting(sentence):
  
@@ -86,6 +90,13 @@ def hyperLogic(param):
             f.write(xlogic)
             return(xlogic)
 
+def playSome(param):
+
+    for word in param.split():
+        if word.lower() in MUSIC:
+            location=str(random.choice(MUSIC_LIST))
+            HLEngine_audioProcess.playsound(location)
+            return("playing as requested")
 
     
     
