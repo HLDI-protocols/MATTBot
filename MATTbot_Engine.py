@@ -64,16 +64,16 @@ except:
 
 
 def commonProtocols():
-    HLEngine_Progressbar.progress("Checking Ports")
+    HLEngine_Progressbar.progress("Searching Ports")
     port=HLEngine_communications.find_Port()
     return(port)
 
-def gainWisdom():
-    data=HLEngine_wiki.wiki()
+def gainWisdom(param):
+    data=HLEngine_wiki.wiki(param)
     return(data)
 
-def sentimentalAnalsys():
-    data=HLEngine_sR.sentiment()
+def sentimentalAnalsys(param):
+    data=HLEngine_sR.sentiment(param)
     return(data)
 
 
@@ -115,7 +115,7 @@ def analyst(user_param):
         flat.sort()
         req_tfidf = flat[-2]    
         if(req_tfidf==0):
-            MATTbot_response="no_data"
+            MATTbot_response="0"
             return MATTbot_response
         else:
             MATTbot_response = MATTbot_response+sent_tokens[idx]
