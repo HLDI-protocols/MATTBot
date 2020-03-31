@@ -1,5 +1,6 @@
 import Consciousness
 from HLEngine import HLEngine_audioProcess
+from HLEngine import HLEngine_communications
 
 
 
@@ -31,6 +32,14 @@ while(True):
         flag=0
     else:
         print("MATTbot:"+PORT)
+        while(True):
+            data=input("\nMattDevice:Enter the command...\ncmd:")
+            if(data=="exit"):
+                break
+            else:
+                HLEngine_communications.serSend(PORT,9600,data)
+                HLEngine_audioProcess.playsound("voice/sent.wav") 
+
 
     if(Emotion==None):
         flag=0
