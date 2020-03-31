@@ -45,12 +45,14 @@ def bye(sentence):
     for word in sentence.split():
         if word.lower() in SIGNING_INPUT:
             HLEngine_Progressbar.progress("shutting down")
+            HLEngine_audioProcess.playsound("voice/bye.wav")
             return ("off")
 
 def utilCOM(sentence):
     for word in sentence.split():
         if word.lower() in SERIAL_MODE:
-            try:                
+            try:   
+                HLEngine_audioProcess.playsound("voice/wait.wav")             
                 PORT=MATTbot_Engine.commonProtocols()
                 return(PORT)
             except:
@@ -59,6 +61,7 @@ def utilCOM(sentence):
 def EmotionDetector(sentence):
     for word in sentence.split():
         if word.lower() in EMOTIONS:
+            HLEngine_audioProcess.playsound("voice/wait.wav") 
             result=MATTbot_Engine.sentimentalAnalsys(sentence)
             if(result<0):
                 return random.choice(EMOTION_OUT_SAD)
@@ -76,6 +79,7 @@ def fight(sentence):
 def superLogic(sentence):
     for word in sentence.split():
         if word.lower() in questions:
+            HLEngine_audioProcess.playsound("voice/wait.wav") 
             ans=MATTbot_Engine.analyst(sentence)            
             return(ans)
             
@@ -83,18 +87,20 @@ def superLogic(sentence):
 def hyperLogic(param):
     for word in param.split():
         if word.lower() in STUDY_NEW:
-            HLEngine_Progressbar.progress("Learning")
+            HLEngine_Progressbar.progress("Gathering")
             data=HLEngine_wordX.EW(param)
             xlogic=MATTbot_Engine.gainWisdom(data)
+            HLEngine_audioProcess.playsound("voice/dataHere.wav") 
             f=open("hiveMind/hiveMind.txt","a")
             f.write(xlogic)
             f.close()
+            HLEngine_audioProcess.playsound("voice/burn.wav") 
             return(xlogic)
 
 def playSome(param):
-
     for word in param.split():
         if word.lower() in MUSIC:
+            HLEngine_audioProcess.playsound("voice/wait.wav") 
             location=str(random.choice(MUSIC_LIST))
             HLEngine_audioProcess.playsound(location)
             return("playing as requested")
