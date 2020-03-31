@@ -88,6 +88,7 @@ def hyperLogic(param):
             xlogic=MATTbot_Engine.gainWisdom(data)
             f=open("hiveMind/hiveMind.txt","a")
             f.write(xlogic)
+            f.close()
             return(xlogic)
 
 def playSome(param):
