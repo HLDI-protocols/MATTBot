@@ -39,7 +39,7 @@ REBOOT=("reboot","restart","init 6")
 
 CAMERA_SER=("camserver","spy","eye")
 
-STOP_CAMERA_SER=("kill spy","terminate spy","pluck eye","murder spy")
+STOP_CAMERA_SER=("kill_spy","terminate_spy","pluck_eye","murder_spy")
 
 IP=("ip","address","network","gateway")
 
