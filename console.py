@@ -16,6 +16,7 @@ while(True):
     shutdown=Consciousness.down(request)
     reboot=Consciousness.reboot(request)
     spy=Consciousness.spy(request)
+    kill=Consciousness.killSpy(request)
     
     if(fetchBy=="off"):
         break
