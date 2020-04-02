@@ -198,6 +198,12 @@ def shutDown_windows():
 def reboot_windows():
     os.system("restart /s /t 1")
 
+def linux_shutdown():
+    os.system("poweroff")
+
+def linux_boot():
+    os.system("reboot")
+
 
 
 

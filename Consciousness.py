@@ -4,12 +4,13 @@ import MATTbot_Engine
 from HLEngine import HLEngine_Progressbar
 from HLEngine import HLEngine_wordX
 from HLEngine import HLEngine_audioProcess
+from HLEngine import HLEngine_communications
 
 
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey")
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
 
-SIGNING_INPUT=("bye","good bye","tata","goodbye","thanks")
+SIGNING_INPUT=("bye","poweroff","tata","goodbye","adios")
 SIGNING_OUTPUT=("bye","good bye","tata","adios amigo","thanks")
 
 SERIAL_MODE=("connected devices","search devices","devices","connect to device")
@@ -32,6 +33,10 @@ MUSIC=("music","song","play")
 
 MUSIC_LIST=("voice/1.mp3","voice/2.mp3","voice/3.mp3")
 
+SHUTDOWN=("shutdown","poweroff","turnoff","turn off","kill","init 0")
+
+REBOOT=("reboot","restart","init 6")
+
 def greeting(sentence):
  
     for word in sentence.split():
@@ -44,7 +49,7 @@ def bye(sentence):
  
     for word in sentence.split():
         if word.lower() in SIGNING_INPUT:
-            HLEngine_Progressbar.progress("shutting down")
+            HLEngine_Progressbar.progress("MATT down")
             HLEngine_audioProcess.playsound("voice/bye.wav")
             return ("off")
 
@@ -111,7 +116,19 @@ def playSome(param):
 
 
                 
+def down(sentence): 
+    for word in sentence.split():
+        if word.lower() in SHUTDOWN:
+            HLEngine_Progressbar.progress("shutting down System")
+            HLEngine_audioProcess.playsound("voice/bye.wav")
+            HLEngine_communications.linux_shutdown()
 
+def reboot(sentence): 
+    for word in sentence.split():
+        if word.lower() in REBOOT:
+            HLEngine_Progressbar.progress("shutting down")
+            HLEngine_audioProcess.playsound("voice/reboot.wav")
+            
 
 
 

@@ -1,9 +1,6 @@
 import Consciousness
 from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_communications
-
-
-
 HLEngine_audioProcess.playsound("voice/login.wav")
 HLEngine_audioProcess.playsound("voice/welcome.wav")
 while(True):
