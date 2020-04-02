@@ -127,7 +127,7 @@ def down(sentence):
 def reboot(sentence): 
     for word in sentence.split():
         if word.lower() in REBOOT:
-            HLEngine_Progressbar.progress("shutting down")
+            HLEngine_Progressbar.progress("rebooting")
             HLEngine_audioProcess.playsound("voice/reboot.wav")
             HLEngine_communications.linux_boot()
             return("reboot")
