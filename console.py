@@ -15,6 +15,7 @@ while(True):
     playBoy=Consciousness.playSome(request)
     shutdown=Consciousness.down(request)
     reboot=Consciousness.reboot(request)
+    spy=Consciousness.spy(request)
     
     if(fetchBy=="off"):
         break

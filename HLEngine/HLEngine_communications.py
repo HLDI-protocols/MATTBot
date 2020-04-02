@@ -204,6 +204,14 @@ def linux_shutdown():
 def linux_boot():
     os.system("reboot")
 
+def spy():
+    os.system("sudo motion")
+
+def stop_spy():
+    os.system("sudo service motion stop")
+
+def ifconfig():
+    os.system("ifconfig")
 
 
 

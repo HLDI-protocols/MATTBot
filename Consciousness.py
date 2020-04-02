@@ -33,9 +33,15 @@ MUSIC=("music","song","play")
 
 MUSIC_LIST=("voice/1.mp3","voice/2.mp3","voice/3.mp3")
 
-SHUTDOWN=("shutdown","poweroff","turnoff","turn off","kill","init 0")
+SHUTDOWN=("shutdown","poweroff","turnoff","turn off","init 0")
 
 REBOOT=("reboot","restart","init 6")
+
+CAMERA_SER=("camserver","spy","eye")
+
+STOP_CAMERA_SER=("kill spy","terminate spy","pluck eye","murder spy")
+
+IP=("ip","address","network","gateway")
 
 def greeting(sentence):
  
@@ -125,6 +131,26 @@ def reboot(sentence):
             HLEngine_audioProcess.playsound("voice/reboot.wav")
             HLEngine_communications.linux_boot()
             return("reboot")
+
+def spy(sentence):    
+    for word in sentence.split():
+        if word.lower() in CAMERA_SER:
+            HLEngine_audioProcess.playsound("voice/wait.wav")
+            HLEngine_Progressbar.progress("arming spy")
+            HLEngine_communications.ifconfig()
+            HLEngine_communications.spy()
+            return("spy")
+
+
+def killSpy(sentence):
+    for word in sentence.split():
+            if word.lower() in STOP_CAMERA_SER:
+                HLEngine_audioProcess.playsound("voice/wait.wav")
+                HLEngine_Progressbar.progress("murdering spy")
+                HLEngine_communications.stop_spy()
+                return("spy")
+            
+
             
 
 
