@@ -109,13 +109,7 @@ def playSome(param):
             location=str(random.choice(MUSIC_LIST))
             HLEngine_audioProcess.playsound(location)
             return("playing as requested")
-
-    
-    
-
-
-
-                
+            
 def down(sentence): 
     for word in sentence.split():
         if word.lower() in SHUTDOWN:

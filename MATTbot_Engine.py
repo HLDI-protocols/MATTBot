@@ -7,7 +7,7 @@ powered by: HLEngine,MATTbot Logic
 
 
 print("\n \n \n")
-print("Er. Akhil P Jacob Presents")
+print("HL Robotics and Intelligence Presents")
 print("\nMATTbot 2020.( Machine for Artificial Thinking and Talking Console 2020)")
 print("\npowered by HLEngine and MATTbot Logic")
 
@@ -49,7 +49,7 @@ except:
 try:
     sent_tokens = nltk.sent_tokenize(raw)
     word_tokens = nltk.word_tokenize(raw)
-    print("\ntokenization......Done ")
+    
     print("\nMATTbot_Engine status:ARMED")
 
 except:

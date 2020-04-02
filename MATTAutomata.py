@@ -1,7 +1,7 @@
 import time
 from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_Progressbar
-print("HL Robotics and Intelligence Presence")
+print("HL Robotics and Intelligence Presents")
 HLEngine_Progressbar.progress("MATTAutomata")
 print("MATTbot:Automata is ARMED")
 def runner():
