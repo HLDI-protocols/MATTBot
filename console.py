@@ -13,6 +13,8 @@ while(True):
     responser=Consciousness.superLogic(request)
     hyperLearn=Consciousness.hyperLogic(request)
     playBoy=Consciousness.playSome(request)
+    shutdown=Consciousness.down(request)
+    reboot=Consciousness.reboot(request)
     
     if(fetchBy=="off"):
         break
