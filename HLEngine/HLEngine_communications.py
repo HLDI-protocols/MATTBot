@@ -2,6 +2,7 @@ import serial
 import smtplib
 import os
 rate=9600
+import time
 def find_Port():
     try:
         ser = serial.Serial("COM1", rate)
@@ -164,7 +165,8 @@ def find_Port():
 def serSend(port,rate,data):
     try:
         ser = serial.Serial(port, rate)
-        ser.write(str.encode(str(data)))
+        time.sleep(2)
+        ser.write(str.encode(str(data)))        
         return('HLEngine:data sent...')
     except:
         return ("HLEngine:issue with the  port")
