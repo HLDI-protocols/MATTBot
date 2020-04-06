@@ -17,6 +17,7 @@ while(True):
     reboot=Consciousness.reboot(request)
     spy=Consciousness.spy(request)
     kill=Consciousness.killSpy(request)
+    Consciousness.IRIS(request)
     
     if(fetchBy=="off"):
         break

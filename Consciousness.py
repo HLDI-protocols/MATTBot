@@ -5,6 +5,7 @@ from HLEngine import HLEngine_Progressbar
 from HLEngine import HLEngine_wordX
 from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_communications
+from HLEngine import HLEngine_camSnap
 
 
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey")
@@ -42,6 +43,10 @@ CAMERA_SER=("camserver","spy","eye")
 STOP_CAMERA_SER=("kill_spy","terminate_spy","pluck_eye","murder_spy")
 
 IP=("ip","address","network","gateway")
+
+SECURITY=("iris")
+
+KILL_SECURITY=("kill_security","terminate_security")
 
 def greeting(sentence):
  
@@ -149,6 +154,27 @@ def killSpy(sentence):
                 HLEngine_Progressbar.progress("murdering spy")
                 HLEngine_communications.stop_spy()
                 return("spy")
+
+
+
+def IRIS(sentence):
+    
+    for word in sentence.split():
+            if word.lower() in SECURITY:
+                ip=input("\nEnter the cam IP address (eg:http://192.168.0.1:8081/video)\n")
+                cascade="i.xml"
+                frameName="MATT_IRIS"
+                HLEngine_audioProcess.playsound("voice/wait.wav")
+                print("MATT_IRIS PROTOCOL ARMED")
+                while(True):
+                    action=HLEngine_camSnap.liveCam_filter(cascade,ip,frameName)
+                    print(action)
+                    if(action==True):
+                        print("MATTbot:intruder Detected")
+                        HLEngine_audioProcess.playsound("voice/dataHere.wav")
+                        
+
+
             
 
             
