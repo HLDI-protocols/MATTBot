@@ -54,7 +54,7 @@ INTRODUCTION=("yourself","introduce","name")
 
 def introduction(sentence):
     for word in sentence.split():
-        if word.lower() in GREETING_INPUTS:
+        if word.lower() in INTRODUCTION:
             HLEngine_audioProcess.playsound("voice/myself.wav")
             HLEngine_audioProcess.playsound("voice/purpose1.wav")
 
