@@ -1,10 +1,14 @@
 import Consciousness
 from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_communications
+from HLEngine import HLEngine_sR
 HLEngine_audioProcess.playsound("voice/login.wav")
 HLEngine_audioProcess.playsound("voice/welcome.wav")
 while(True):
-    request=str(input("\nMATTbot:Hi, how may I help you sir? \nme:"))
+    print("MATTbot:MATT is listening to you.")
+    #request=str(input("\nMATTbot:Hi, how may I help you sir? "))
+    request=HLEngine_sR.sR()
+    print("\nme:"+request)
     fetchGr=Consciousness.greeting(request)
     fetchBy=Consciousness.bye(request)
     PORT=Consciousness.utilCOM(request)

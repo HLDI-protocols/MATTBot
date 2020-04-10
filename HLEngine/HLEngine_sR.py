@@ -14,7 +14,7 @@ def sR():
             return(content)
 
         except sr.UnknownValueError:
-            return ("HLEngine:Google Speech Recognition could not understand audio")
+            return ("HLEngine:----------------waiting----------------")
 
 
         except sr.RequestError as e:

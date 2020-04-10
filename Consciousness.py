@@ -26,7 +26,7 @@ EMOTIONS_NO=("mm","okay","ya","thats fine","mmmm",":P",":)",";p",";)","oh yea")
 
 BAD_Words=("fuck","fuck you","fuckyou","asshole","you rubbish","fuck off","jack ass","jerk")
 
-questions=("what","how","why","who","when","do","which","may")
+questions=("what","how","who","when","which","may")
 
 STUDY_NEW=("learn","study")
 
@@ -48,10 +48,30 @@ SECURITY=("iris")
 
 KILL_SECURITY=("kill_security","terminate_security")
 
+PURPOSE=("purpose","detail","capable")
+INTRODUCTION=("yourself","introduce","name")
+
+
+def introduction(sentence):
+    for word in sentence.split():
+        if word.lower() in GREETING_INPUTS:
+            HLEngine_audioProcess.playsound("voice/myself.wav")
+            HLEngine_audioProcess.playsound("voice/purpose1.wav")
+
+
+def purpose(sentence):
+    for word in sentence.split():
+        if word.lower() in PURPOSE:
+            HLEngine_audioProcess.playsound("voice/purpose2.wav")
+
+
+
+
 def greeting(sentence):
  
     for word in sentence.split():
         if word.lower() in GREETING_INPUTS:
+            HLEngine_audioProcess.playsound("voice/service.wav")
             return random.choice(GREETING_RESPONSES)
 
 
@@ -80,8 +100,10 @@ def EmotionDetector(sentence):
             HLEngine_audioProcess.playsound("voice/wait.wav") 
             result=MATTbot_Engine.sentimentalAnalsys(sentence)
             if(result<0):
+                HLEngine_audioProcess.playsound("voice/sad.wav")
                 return random.choice(EMOTION_OUT_SAD)
             elif(result>0):
+                HLEngine_audioProcess.playsound("voice/happy.wav")
                 return random.choice(EMOTION_OUT_HAPPY)
             else:
                 return random.choice(EMOTIONS_NO)
