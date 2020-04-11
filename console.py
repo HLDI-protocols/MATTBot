@@ -20,6 +20,7 @@ while(True):
     Consciousness.IRIS(request)
     Consciousness.introduction(request)
     Consciousness.purpose(request)
+    Consciousness.soundCloud(request)
     
     if(fetchBy=="off"):
         break
