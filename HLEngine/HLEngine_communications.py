@@ -213,7 +213,9 @@ def stop_spy():
 def ifconfig():
     os.system("ifconfig")
 
-
+def automatA():
+    os.system("chmod u+x automata.sh")
+    os.system("./automata.sh")
 
 
 

@@ -52,6 +52,8 @@ PURPOSE=("purpose","detail","capable")
 
 INTRODUCTION=("yourself","introduce","name")
 
+AUTOMATA=("automation","auto","takeover")
+
 SOUND_CLOUD_HITS=("soundcloud","sound cloud", "favourites","favourite","cloud","songs")
 SOUND_CLOUD=("https://soundcloud.com/datastream1986/star-racer","https://soundcloud.com/ageofvolt/supreme-delight-free-download","https://soundcloud.com/ageofvolt/volts-theme","https://soundcloud.com/theundeadaudio/a-love-letter","https://soundcloud.com/time-travel-beats/sunny","https://soundcloud.com/miamisunsets/dark-city-ft-emilio-asstevez","https://soundcloud.com/juno-dreams/be-with-me-remastered-2018","https://soundcloud.com/spaceinvaderspaceinvader/ocean-drive-avenue-dont-you-like-it-spaceinvader-remix","https://soundcloud.com/morgan-willis-1982/professor-omega-feat-paradise-walk-supernova-album","https://soundcloud.com/moter-gr/vortex","https://soundcloud.com/ageofvolt/wunderbar","https://soundcloud.com/chill/digy-tragedy-ft-kirsch")
 
@@ -208,6 +210,15 @@ def soundCloud(sentence):
             link=random.choice(SOUND_CLOUD)
             import webbrowser
             webbrowser.open(link, new=2)
+
+
+def automata(sentence):
+    for word in sentence.split():
+        if word.lower() in AUTOMATA: 
+            HLEngine_Progressbar.progress("Automata Enabling")        
+            HLEngine_communications.automatA()   
+            
+
             
 
 

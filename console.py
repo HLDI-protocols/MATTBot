@@ -21,6 +21,7 @@ while(True):
     Consciousness.introduction(request)
     Consciousness.purpose(request)
     Consciousness.soundCloud(request)
+    Consciousness.automata(request)
     
     if(fetchBy=="off"):
         break
