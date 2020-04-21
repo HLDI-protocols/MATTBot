@@ -1,5 +1,5 @@
 #!/bin/sh
-echo 'Hyper Library Dynamics and Integration 2020';
+echo 'Hyper Library Integration and Dynamics 2020';
 wait
 cd HLEngine
 python3 HLEngine_EnvironmentSetup.py &
@@ -14,5 +14,5 @@ sudo apt-get install python-pyaudio python3-pyaudio
 wait
 sudo apt-get install python-gst-1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-tools
 wait
-echo 'Hyper Library Dynamics and Integration 2020 Environmenal setup completed SUCCESSFULLY';
+echo 'Hyper Library Integration and Dynamics 2020 Environmenal setup completed SUCCESSFULLY';
 
