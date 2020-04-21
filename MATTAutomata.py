@@ -1,13 +1,23 @@
 import time
+import sys
+from datetime import datetime
 from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_Progressbar
-print("HL Robotics and Intelligence Presents")
+print("\n")
+print("\n")
+print("Hyper Library Dynamics and Integration 2020 ")
 HLEngine_Progressbar.progress("MATTAutomata")
 print("MATTbot:Automata is ARMED")
 def runner():
     
     t = time.localtime()
-    current_time = time.strftime("%H:%M:%S", t)
+    current_time = time.strftime("%H:%M:%S", t)  
+    now = datetime.now()
+    print (now.strftime("%m/%d/%Y %H:%M:%S"), end="", flush=True),
+    print("\r", end="", flush=True),
+    time.sleep(1)
+    
+    
     if(current_time=="10:00:10"):
         HLEngine_audioProcess.playsound("voice/breakfast.wav")
         print("MATTbot:sir, Breakfast time")

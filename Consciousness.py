@@ -32,7 +32,7 @@ STUDY_NEW=("learn","study")
 
 MUSIC=("music","song","play")
 
-MUSIC_LIST=("voice/1.mp3","voice/2.mp3","voice/3.mp3")
+MUSIC_LIST=("voice/1.mp3","voice/2.mp3","voice/3.mp3","voice/theme.mp3")
 
 SHUTDOWN=("shutdown","poweroff","turnoff","turn off","init 0")
 
