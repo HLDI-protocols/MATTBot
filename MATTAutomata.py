@@ -5,7 +5,7 @@ from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_Progressbar
 print("\n")
 print("\n")
-print("Hyper Library Integration and Dynamcs 2020 ")
+print("Hyper Library Dynamic Integration 2020 ")
 HLEngine_Progressbar.progress("MATTAutomata")
 print("MATTbot:Automata is ARMED")
 def runner():

@@ -7,7 +7,7 @@ powered by: HLEngine,MATTbot Logic
 
 
 print("\n \n \n")
-print("Hyper Library Intergration and Dynamics 2020")
+print("Hyper Library Dynamic Integration 2020")
 print("\nMATTbot 2020.( Machine for Artificial Thinking and Talking Console 2020)")
 print("\npowered by HLEngine and MATTbot Logic")
 
