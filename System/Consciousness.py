@@ -1,6 +1,7 @@
 import random
 import string
 import MATTbot_Engine
+import os
 from HLEngine import HLEngine_Progressbar
 from HLEngine import HLEngine_wordX
 from HLEngine import HLEngine_audioProcess
@@ -26,13 +27,13 @@ EMOTIONS_NO=("mm","okay","ya","thats fine","mmmm",":P",":)",";p",";)","oh yea")
 
 BAD_Words=("fuck","fuck you","fuckyou","asshole","you rubbish","fuck off","jack ass","jerk")
 
-questions=("what","how","who","when","which","may")
+questions=("what","how","who","when","which","may","learn","study")
 
 STUDY_NEW=("learn","study")
 
 MUSIC=("music","song","play")
 
-MUSIC_LIST=("voice/1.mp3","voice/2.mp3","voice/3.mp3","voice/theme.mp3")
+MUSIC_LIST=("music/1.mp3","music/2.mp3","music/3.mp3","music/theme.mp3")
 
 SHUTDOWN=("shutdown","poweroff","turnoff","turn off","init 0")
 
@@ -53,6 +54,8 @@ PURPOSE=("purpose","detail","capable")
 INTRODUCTION=("yourself","introduce","name")
 
 AUTOMATA=("automation","auto","takeover")
+
+MOTION=("motion_reference","spy_reference","camera_server_reference")
 
 SOUND_CLOUD_HITS=("soundcloud","sound cloud", "favourites","favourite","cloud","songs")
 SOUND_CLOUD=("https://soundcloud.com/datastream1986/star-racer","https://soundcloud.com/ageofvolt/supreme-delight-free-download","https://soundcloud.com/ageofvolt/volts-theme","https://soundcloud.com/theundeadaudio/a-love-letter","https://soundcloud.com/time-travel-beats/sunny","https://soundcloud.com/miamisunsets/dark-city-ft-emilio-asstevez","https://soundcloud.com/juno-dreams/be-with-me-remastered-2018","https://soundcloud.com/spaceinvaderspaceinvader/ocean-drive-avenue-dont-you-like-it-spaceinvader-remix","https://soundcloud.com/morgan-willis-1982/professor-omega-feat-paradise-walk-supernova-album","https://soundcloud.com/moter-gr/vortex","https://soundcloud.com/ageofvolt/wunderbar","https://soundcloud.com/chill/digy-tragedy-ft-kirsch")
@@ -129,7 +132,7 @@ def superLogic(sentence):
 
 def hyperLogic(param):
     for word in param.split():
-        if word.lower() in STUDY_NEW:
+        if word.lower() in questions:
             HLEngine_Progressbar.progress("Gathering")
             data=HLEngine_wordX.EW(param)
             xlogic=MATTbot_Engine.gainWisdom(data)
@@ -141,12 +144,13 @@ def hyperLogic(param):
             return(xlogic)
 
 def playSome(param):
-    for word in param.split():
+    """for word in param.split():
         if word.lower() in MUSIC:
             HLEngine_audioProcess.playsound("voice/wait.wav") 
             location=str(random.choice(MUSIC_LIST))
-            HLEngine_audioProcess.playsound(location)
-            return("playing as requested")
+            HLEngine_audioProcess.playsound(location)"""
+    os.system("./playboy.sh")
+    return("playing as requested")
             
 def down(sentence): 
     for word in sentence.split():
@@ -208,6 +212,16 @@ def soundCloud(sentence):
         if word.lower() in SOUND_CLOUD_HITS: 
             HLEngine_Progressbar.progress("Opening Browser")           
             link=random.choice(SOUND_CLOUD)
+            import webbrowser
+            webbrowser.open(link, new=2)
+
+
+def motionRef(sentence):
+    for word in sentence.split():
+        if word.lower() in MOTION: 
+            print('MATTbot:Motion is already installed')
+            HLEngine_Progressbar.progress("Opening Browser")           
+            link="https://www.instructables.com/id/How-to-Make-Raspberry-Pi-Webcam-Server-and-Stream-/"
             import webbrowser
             webbrowser.open(link, new=2)
 

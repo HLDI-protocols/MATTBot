@@ -10,18 +10,20 @@ while(True):
     PORT=Consciousness.utilCOM(request)
     Emotion=Consciousness.EmotionDetector(request)
     Fight=Consciousness.fight(request)
-    responser=Consciousness.superLogic(request)
+    #responser=Consciousness.superLogic(request)
     hyperLearn=Consciousness.hyperLogic(request)
     playBoy=Consciousness.playSome(request)
     shutdown=Consciousness.down(request)
     reboot=Consciousness.reboot(request)
     spy=Consciousness.spy(request)
     kill=Consciousness.killSpy(request)
-    Consciousness.IRIS(request)
-    Consciousness.introduction(request)
-    Consciousness.purpose(request)
+
     Consciousness.soundCloud(request)
+    Consciousness.introduction(request)
+    Consciousness.purpose(request)    
     Consciousness.automata(request)
+    Consciousness.motionRef(request)
+    #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):
         break
@@ -57,10 +59,10 @@ while(True):
     else:
         print("MATTbot:"+Fight)
 
-    if(responser==None):
+    """if(responser==None):
         flag=0
     else:
-        print(responser)
+        print(responser)"""
 
     if(hyperLearn==None):
         flag=0
