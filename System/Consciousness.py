@@ -8,6 +8,9 @@ from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_communications
 from HLEngine import HLEngine_camSnap
 
+global play_status
+play_status=False
+
 
 GREETING_INPUTS = ("hello", "hi", "greetings", "sup", "what's up","hey")
 GREETING_RESPONSES = ["hi", "hey", "*nods*", "hi there", "hello", "I am glad! You are talking to me"]
@@ -144,13 +147,14 @@ def hyperLogic(param):
             return(xlogic)
 
 def playSome(param):
-    """for word in param.split():
-        if word.lower() in MUSIC:
-            HLEngine_audioProcess.playsound("voice/wait.wav") 
-            location=str(random.choice(MUSIC_LIST))
-            HLEngine_audioProcess.playsound(location)"""
-    os.system("./playboy.sh")
-    return("playing as requested")
+
+    for word in param.split():
+        if word.lower() in MUSIC:   
+        
+            os.system("./playboy.sh")
+            return("playing as requested")
+        else:
+            return("********")
             
 def down(sentence): 
     for word in sentence.split():
