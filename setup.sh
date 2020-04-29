@@ -1,6 +1,12 @@
 #!/bin/sh
 echo 'Hyper Library Dynamic Integration 2020';
 wait
+sudo apt-get update
+wait
+sudo apt-get install idle3
+wait
+sudo apt-get install python3-pip
+wait
 sudo apt-get install python-pyaudio python3-pyaudio 
 wait
 sudo apt-get install python-gst-1.0 gstreamer1.0-plugins-good gstreamer1.0-plugins-ugly gstreamer1.0-tools
