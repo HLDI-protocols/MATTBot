@@ -1,11 +1,15 @@
 #!/bin/sh
 cd System
-#konsole -e python3 MATTAutomata.py & 
-#konsole -e python3 console.py &
-gnome-terminal -e 'python3 MATTAutomata.py &'
-gnome-terminal -e 'python3 console.py &'
+#KDE uncomment konsole
+konsole -e python3 MATTAutomata.py & 
+konsole -e python3 console.py &
+#UBUNTU/other gnome distro uncomment gnome
+#gnome-terminal -e 'python3 MATTAutomata.py &'
+#gnome-terminal -e 'python3 console.py &'
 wait
 exit
+
+
  
 
 
