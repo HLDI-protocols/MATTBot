@@ -11,12 +11,8 @@ def update():
         git_dir = "../../../MATTBot/"
         g = git.cmd.Git(git_dir)
         g.pull()
-        print("HLEngine:done updating ......")
-        img = cv2.imread('HLEngine.png')
-        cv2.imshow('HLEngine updates', img)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-
+        return("HLEngine:MATTbot updated, reboot MATT to reflect ......")
+        
     except:
         return("HLEngine:cannot connect to MATTBot Server")
 

@@ -26,7 +26,8 @@ try:
     from sklearn.feature_extraction.text import TfidfVectorizer
     from sklearn.metrics.pairwise import cosine_similarity
     HLEngine_Progressbar.progress("MATTbot update connecting")
-    HLEngine_update_MATTbot.update()
+    status=HLEngine_update_MATTbot.update()
+    print(status)
     HLEngine_Progressbar.progress("MATTbot core")
     print("\nMATTbotCore: Loaded Core functionalities")
 
