@@ -1,0 +1,32 @@
+MATTbot 2020 ChatBot Installation Procedure
+Developed by HL Dynamic Integration
+Designed by: Er. Akhil P Jacob
+
+1.sudo apt-get update
+2.sudo apt-get install idle3
+3.sudo apt-get install python3-pip
+
+4.Go to Home Directory and mkdir HLDynamicIntegration
+5.copy MATTbot_Downloader.sh in HLDynamicIntegration
+6.make MATTbot_Downloader.sh executable using chmod cmd 
+(Home/HLDynamicIntegration/chmod +x MATTbot_Downloader.sh)
+
+7.Home/HLDynamicIntegration/./MATTbot_Downloader.sh
+wait till download. After Download
+
+8.Home/HLDynamicIntegration/cd MATTbot
+9.Home/HLDynamicIntegration/chmod +x setup.sh
+
+10.Home/HLDynamicIntegration/./setup.sh
+
+wait till setup is complete. you need to give sudo psd here and press y many times(20 mins appx)
+after installation 
+
+11.Home/HLDynamicIntegration/chmod +x launcher.sh
+12.Home/HLDynamicIntegration/./launcher.sh
+
+This willpop up 2 other terminals
+1. MATT Automata gives ur system time and can automate system or anything in it.
+2. In MATT console you can chat with MATT AI. Ask anything. and can even shutdown linux :)
+
+For more hacks let me Know
