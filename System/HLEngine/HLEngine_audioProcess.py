@@ -40,7 +40,7 @@ def readText(param):
     try:
         engine = pyttsx3.init()
         engine.getProperty('rate')
-        engine.setProperty('rate', 125)
+        engine.setProperty('rate', 125)        
         engine.say(param)
         engine.runAndWait()
     except:

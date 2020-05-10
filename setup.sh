@@ -17,6 +17,10 @@ sudo apt-get install sox
 wait
 sudo apt-get install sox libsox-fmt-all
 wait
+sudo apt install libespeak1
+wait
+sudo apt-get install python3-pygame
+wait
 cd System/HLEngine
 python3 HLEngine_EnvironmentSetup.py &
 wait

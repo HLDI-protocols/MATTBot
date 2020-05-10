@@ -1,7 +1,7 @@
 import Consciousness
 from HLEngine import HLEngine_audioProcess
 from HLEngine import HLEngine_communications
-HLEngine_audioProcess.playsound("voice/login.wav")
+HLEngine_audioProcess.playsound("voice/login.mp3")
 HLEngine_audioProcess.playsound("voice/welcome.wav")
 while(True):
     request=str(input("\nMATTbot:Hi, how may I help you sir? \nme:"))
@@ -17,6 +17,7 @@ while(True):
     reboot=Consciousness.reboot(request)
     spy=Consciousness.spy(request)
     kill=Consciousness.killSpy(request)
+    reminder=Consciousness.create_reminder(request)
 
     Consciousness.soundCloud(request)
     Consciousness.introduction(request)
@@ -35,6 +36,11 @@ while(True):
         flag=0
     else:
         print("MATTbot:"+fetchBy)
+
+    if(reminder==None):
+        flag=0
+    else:
+        print("MATTbot:"+reminder)
     
     if(PORT==None):
         flag=0
