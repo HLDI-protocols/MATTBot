@@ -208,7 +208,7 @@ def create_reminder(sentence):
 
 def vectorBot(sentence):
     for word in sentence.split():
-        if word.lower() in taskMapping.BLUETOOTH: 
+        if word.lower() in taskMapping.VECTOR: 
             HLEngine_Progressbar.progress("Initializing")  
             botAddress=BTDevices.robot_Vector_COM
             HLEngine_communications.botAccess(botAddress)
