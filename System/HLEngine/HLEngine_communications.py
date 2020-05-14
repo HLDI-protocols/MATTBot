@@ -3,6 +3,8 @@ import smtplib
 import os
 rate=9600
 import time
+import bluetooth
+
 def find_Port():
     try:
         ser = serial.Serial("COM1", rate)
@@ -216,6 +218,23 @@ def ifconfig():
 def automatA():
     os.system("chmod u+x automata.sh")
     os.system("./automata.sh")
+
+
+
+def botAccess(bot_address):
+    bd_addr=bot_address
+    port = 1
+    sock = bluetooth.BluetoothSocket (bluetooth.RFCOMM)
+    sock.connect((bd_addr,port))
+    while 1:
+        tosend = input('Enter your wireless command here')
+        if (tosend != 'exit'):
+            sock.send(tosend)
+            #return("data_send")
+        elif (tosend=='exit'):
+            break
+
+
 
 
 
