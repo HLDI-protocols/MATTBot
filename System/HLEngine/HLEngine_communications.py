@@ -251,15 +251,16 @@ def botAccess(bot_address):
         port = 1
         sock = bluetooth.BluetoothSocket (bluetooth.RFCOMM)
         sock.connect((bd_addr,port))
+        print("Connection to robot VECTOR [established]")
         while 1:
-            tosend = input('Enter your wireless command here')
+            tosend = input('Enter your wireless command here:  ')
             if (tosend != 'exit'):
                 sock.send(tosend)
                 #return("data_send")
             elif (tosend=='exit'):
                 break
     except:
-        print("HLEngine: Cannot connect to Robot [Vector]")
+        print("HLEngine: Connection to robot VECTOR [interrupted]")
 
 
 
