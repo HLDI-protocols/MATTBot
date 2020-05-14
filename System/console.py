@@ -24,6 +24,7 @@ while(True):
     Consciousness.purpose(request)    
     Consciousness.automata(request)
     Consciousness.motionRef(request)
+    Consciousness.vectorBot(request)
     #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):

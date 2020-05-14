@@ -195,44 +195,71 @@ def sendMail(mailid,psd,to,msg):
         return ("HLEngine :failed to send mail")
 
 def shutDown_windows():
-    os.system("shutdown /s /t 1")
+    try:
+        os.system("shutdown /s /t 1")
+    except:
+        return ("HLEngine :failed to shutdown windows")
+
 
 def reboot_windows():
-    os.system("restart /s /t 1")
+    try:
+        os.system("restart /s /t 1")
+    except:
+        return ("HLEngine :failed to reboot windows")
 
 def linux_shutdown():
-    os.system("poweroff")
+    try:
+        os.system("poweroff")
+    except:
+        return ("HLEngine :failed to shutdown linux")
 
 def linux_boot():
-    os.system("reboot")
+    try:
+        os.system("reboot")
+    except:
+        return ("HLEngine :failed to reboot linux")
 
 def spy():
-    os.system("sudo motion")
-
+    try:
+        os.system("sudo motion")
+    except:
+        return ("HLEngine :failed to configure motion")
 def stop_spy():
-    os.system("sudo service motion stop")
+    try:
+        os.system("sudo service motion stop")
+    except:
+        return ("HLEngine :failed to shutdown windows")
 
 def ifconfig():
-    os.system("ifconfig")
+    try:
+        os.system("ifconfig")
+    except:
+        return ("HLEngine :sorry ,cmd error")
 
 def automatA():
-    os.system("chmod u+x automata.sh")
-    os.system("./automata.sh")
+    try:
+        os.system("chmod u+x automata.sh")
+        os.system("./automata.sh")
+    except:
+        return ("HLEngine :cannot launch MATTAutomata")
 
 
 
 def botAccess(bot_address):
-    bd_addr=bot_address
-    port = 1
-    sock = bluetooth.BluetoothSocket (bluetooth.RFCOMM)
-    sock.connect((bd_addr,port))
-    while 1:
-        tosend = input('Enter your wireless command here')
-        if (tosend != 'exit'):
-            sock.send(tosend)
-            #return("data_send")
-        elif (tosend=='exit'):
-            break
+    try:
+        bd_addr=bot_address
+        port = 1
+        sock = bluetooth.BluetoothSocket (bluetooth.RFCOMM)
+        sock.connect((bd_addr,port))
+        while 1:
+            tosend = input('Enter your wireless command here')
+            if (tosend != 'exit'):
+                sock.send(tosend)
+                #return("data_send")
+            elif (tosend=='exit'):
+                break
+    except:
+        print("HLEngine: Cannot connect to Robot [Vector]")
 
 
 

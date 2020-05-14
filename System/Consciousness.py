@@ -15,6 +15,7 @@ from HLEngine import HLEngine_communications
 from HLEngine import HLEngine_camSnap
 from Seeker import taskMapping
 from Seeker import timeMapper
+from MATT_Ware import BTDevices
 
 
 
@@ -203,3 +204,12 @@ def create_reminder(sentence):
            
             print("WARNING !!!!: Reminder works only for this Instance of MATTBOT.")
             return("Reminder Added to MATTbot")
+
+
+def vectorBot(sentence):
+    for word in sentence.split():
+        if word.lower() in taskMapping.BLUETOOTH: 
+            HLEngine_Progressbar.progress("Initializing")  
+            botAddress=BTDevices.robot_Vector_COM
+            HLEngine_communications.botAccess(botAddress)
+
