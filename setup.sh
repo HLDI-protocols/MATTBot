@@ -21,6 +21,8 @@ sudo apt install libespeak1
 wait
 sudo apt-get install python3-pygame
 wait
+sudo apt-get install python3-bluez
+wait
 cd System/HLEngine
 python3 HLEngine_EnvironmentSetup.py &
 wait
