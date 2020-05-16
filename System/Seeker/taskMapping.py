@@ -61,3 +61,5 @@ SOUND_CLOUD=("https://soundcloud.com/datastream1986/star-racer","https://soundcl
 REMINDER=("reminder","remember")
 
 VECTOR=("vector")
+
+ANALOG_CONTROLLER=("controller","joystick")

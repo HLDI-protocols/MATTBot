@@ -15,7 +15,7 @@ from HLEngine import HLEngine_communications
 from HLEngine import HLEngine_camSnap
 from Seeker import taskMapping
 from Seeker import timeMapper
-from MATT_Ware import BTDevices
+from MATT_Ware import Devices
 
 
 
@@ -210,6 +210,14 @@ def vectorBot(sentence):
     for word in sentence.split():
         if word.lower() in taskMapping.VECTOR: 
             HLEngine_Progressbar.progress("Initializing")  
-            botAddress=BTDevices.robot_Vector_COM
+            botAddress=Devices.robot_Vector_COM
             HLEngine_communications.botAccess(botAddress)
+
+
+def analog_Controller(sentence):
+    for word in sentence.split():
+        if word.lower() in taskMapping.ANALOG_CONTROLLER: 
+            HLEngine_Progressbar.progress("Initializing")
+            HLEngine_communications.VECTORCONTROLLER_JOYSTICK()
+
 

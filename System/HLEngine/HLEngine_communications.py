@@ -263,6 +263,14 @@ def botAccess(bot_address):
         print("HLEngine: Connection to robot VECTOR [interrupted]")
 
 
+def VECTORCONTROLLER_JOYSTICK():
+    try:
+        #os.system("chmod u+x joyStick.sh")
+        os.system("./joyStick.sh")
+    except:
+        return ("HLEngine :cannot launch MATTAutomata")
+
+
 
 
 
