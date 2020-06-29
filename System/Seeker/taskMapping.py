@@ -44,6 +44,10 @@ IP=("ip","address","network","gateway")
 
 SECURITY=("iris")
 
+FACEBOOK=("facebook")
+
+SICK=("sick","leave")
+
 KILL_SECURITY=("kill_security","terminate_security")
 
 PURPOSE=("purpose","detail","capable")

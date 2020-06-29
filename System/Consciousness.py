@@ -220,4 +220,42 @@ def analog_Controller(sentence):
             HLEngine_Progressbar.progress("Initializing")
             HLEngine_communications.VECTORCONTROLLER_JOYSTICK()
 
+def facebook(sentence):
+    for word in sentence.split():
+        if word.lower() in taskMapping.FACEBOOK:
+            HLEngine_Progressbar.progress("Initializing")
+            import webbrowser
+            link="www.facebook.com"
+            webbrowser.open(link, new=2)
+
+
+def leave(sentence):
+    for word in sentence.split():
+        if word.lower() in taskMapping.SICK:
+            HLEngine_Progressbar.progress("Initializing")
+            reason=input("Enter reason ....\n")
+            date=input("Date .....\n")
+            print("\n")
+
+            print("Subject: Leave Application due to "+reason)
+            print("Dear Sir,\n")
+            print("Greetings of the day.")
+            print("Kindly grant me leave on "+date+", Since I am having "+reason+".")
+            print("Thanks and Regards,\n")
+            print("Er.Akhil P Jacob,\n")
+            print("Senior Robotics Engineer\n")
+            print("Inker Robotics Thrissur\n")
+
+            link="https://mail.yandex.com/?uid=1130000042136080#inbox"
+            import webbrowser
+            webbrowser.open(link, new=2)
+
+
+
+
+
+
+    
+
+
 

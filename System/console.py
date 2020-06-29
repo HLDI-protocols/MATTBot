@@ -26,6 +26,8 @@ while(True):
     Consciousness.motionRef(request)
     Consciousness.vectorBot(request)
     Consciousness.analog_Controller(request)
+    Consciousness.facebook(request)
+    Consciousness.leave(request)
     #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):
