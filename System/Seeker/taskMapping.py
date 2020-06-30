@@ -46,6 +46,8 @@ SECURITY=("iris")
 
 FACEBOOK=("facebook")
 
+YOUTUBE=("youtube")
+
 SICK=("sick","leave")
 
 KILL_SECURITY=("kill_security","terminate_security")

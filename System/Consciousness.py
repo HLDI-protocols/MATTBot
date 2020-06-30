@@ -229,6 +229,15 @@ def facebook(sentence):
             webbrowser.open(link, new=2)
 
 
+def youtube(sentence):
+    for word in sentence.split():
+        if word.lower() in taskMapping.YOUTUBE:
+            HLEngine_Progressbar.progress("Initializing")
+            import webbrowser
+            link="www.youtube.com"
+            webbrowser.open(link, new=2)
+
+
 def leave(sentence):
     for word in sentence.split():
         if word.lower() in taskMapping.SICK:
