@@ -1,4 +1,7 @@
 #!/bin/sh
+gif-for-cli "System/HLEngine/HL_Flags/updating_HLEngine.gif"
+
+wait
 cd System
 #KDE uncomment konsole
 #konsole -e python3 MATTAutomata.py & 
@@ -7,9 +10,15 @@ cd System
 gnome-terminal -e 'python3 MATTAutomata.py &'
 gnome-terminal -e 'python3 console.py &'
 wait
+cd ..
+clear
+echo "MATTBot 2020 activated"
+echo "designed and developed by Akhil P Jacob"
+gif-for-cli "System/HLEngine/HL_Flags/updating_HLEngine.gif"
 exit
 
 
  
 
 
+ 
