@@ -259,6 +259,16 @@ def leave(sentence):
             import webbrowser
             webbrowser.open(link, new=2)
 
+def target_identification(param):
+
+    for word in param.split():
+        if word.lower() in taskMapping.TARGETS:   
+        
+            os.system("./tracker.sh")
+            return("Enabling Cams as requested.....")
+        else:
+            return("********")
+
 
 
 

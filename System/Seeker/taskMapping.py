@@ -69,3 +69,5 @@ REMINDER=("reminder","remember")
 VECTOR=("vector")
 
 ANALOG_CONTROLLER=("controller","joystick")
+
+TARGETS=("identify","tracker")

@@ -29,6 +29,7 @@ while(True):
     Consciousness.facebook(request)
     Consciousness.youtube(request)
     Consciousness.leave(request)
+    Consciousness.target_identification(request)
     #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):
