@@ -15,6 +15,7 @@ cd ..
 clear
 echo "MATTBot 2020 activated"
 echo "designed and developed by Akhil P Jacob"
+echo "last updated on 31st July 2020"
 gif-for-cli "System/HLEngine/HL_Flags/updating_HLEngine.gif"
 exit
 
