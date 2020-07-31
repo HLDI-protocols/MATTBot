@@ -93,7 +93,7 @@ def lockTarget_IP(filterName,ip,user1,user2,user3,user4,user5,user6,user7,user8,
                 id = 'unknown'
             # cv2.cv.putText(cv2.cv.fromarray(img),str(id),(x,y+h),font,255)
             cv2.putText(img, str(id), (x, y + h), font, 2, (255, 0, 0), 3);
-        cv2.imshow('face', img)
+        cv2.imshow('MATTBot 2020 Tracker', img)
         if (cv2.waitKey(1) == ord('q')):
             break;
     cam.release()
@@ -142,7 +142,7 @@ def lockTarget_Camera(filterName,camera,user1,user2,user3,user4,user5,user6,user
                 id = 'unknown'
             # cv2.cv.putText(cv2.cv.fromarray(img),str(id),(x,y+h),font,255)
             cv2.putText(img, str(id), (x, y + h), font, 2, (255, 0, 0), 3);
-        cv2.imshow('face', img)
+        cv2.imshow('MATTBot 2020 Tracker', img)
         if (cv2.waitKey(1) == ord('q')):
             break;
     cam.release()
