@@ -30,6 +30,7 @@ while(True):
     Consciousness.youtube(request)
     Consciousness.leave(request)
     Consciousness.target_identification(request)
+    Consciousness.wakeup(request)
     #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):

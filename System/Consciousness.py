@@ -269,6 +269,17 @@ def target_identification(param):
         else:
             return("********")
 
+def wakeup(param):
+    for word in param.split():
+        if word.lower() in taskMapping.WAKEUP:   
+        
+            os.system("./wakeup.sh")
+            return("Enabling Cams as requested.....")
+        else:
+            return("********")
+
+    
+
 
 
 

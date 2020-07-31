@@ -63,6 +63,8 @@ def liveCam_filter(filter,cam,frameName):
             # print (len(faces))
             if (len(net) >= 2):
                 return (True)
+            else:
+                return(False)
 
 
 
