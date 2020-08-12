@@ -99,7 +99,7 @@ def hyperLogic(param):
             f=open("hiveMind/hiveMind.txt","a")
             f.write(xlogic)
             f.close()
-            HLEngine_audioProcess.playsound("voice/burn.wav") 
+            #HLEngine_audioProcess.playsound("voice/burn.wav") 
             return(xlogic)
 
 def playSome(param):
@@ -277,6 +277,35 @@ def wakeup(param):
             return("Enabling Cams as requested.....")
         else:
             return("********")
+
+
+def radioMango(param):
+    for word in param.split():
+        if word.lower() in taskMapping.RADIO_MANGO:
+            HLEngine_Progressbar.progress("Initializing")
+            import webbrowser
+            link="https://onlineradiofm.in/stations/mango"
+            webbrowser.open(link, new=2) 
+
+
+def akashavani(param):  
+    for word in param.split():
+        if word.lower() in taskMapping.AKASHA_VANI:
+            HLEngine_Progressbar.progress("Initializing")
+            import webbrowser
+            link="https://onlineradiofm.in/stations/fm-rainbow"
+            webbrowser.open(link, new=2)
+
+def clubFM(param):
+    for word in param.split():
+        if word.lower() in taskMapping.CLUB_FM:
+            HLEngine_Progressbar.progress("Initializing")
+            import webbrowser
+            link="https://onlineradiofm.in/stations/club"
+            webbrowser.open(link, new=2)
+
+
+
 
     
 

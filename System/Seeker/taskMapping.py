@@ -28,7 +28,7 @@ questions=("what","how","who","when","which","may","learn","study")
 
 STUDY_NEW=("learn","study")
 
-MUSIC=("music","song","play")
+MUSIC=("music","song",)
 
 MUSIC_LIST=("music/1.mp3","music/2.mp3","music/3.mp3","music/theme.mp3")
 
@@ -73,3 +73,9 @@ ANALOG_CONTROLLER=("controller","joystick")
 TARGETS=("identify","tracker")
 
 WAKEUP=("wakeup","wake","wake_me_up")
+
+RADIO_MANGO=("radiomango","radio_mango")
+
+AKASHA_VANI=("aakashavani,akasha_vani")
+
+CLUB_FM=("clubfm,club_fm")

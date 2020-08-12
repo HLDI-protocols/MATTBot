@@ -31,6 +31,9 @@ while(True):
     Consciousness.leave(request)
     Consciousness.target_identification(request)
     Consciousness.wakeup(request)
+    Consciousness.radioMango(request)
+    Consciousness.clubFM(request)
+    Consciousness.akashavani(request)
     #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):
