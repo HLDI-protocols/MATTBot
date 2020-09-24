@@ -1,7 +1,9 @@
 #!/bin/sh
-gif-for-cli "MATTBot.gif"
-
+gif-for-cli "HLD.gif"
 wait
+gif-for-cli "HLD.gif"
+wait
+
 cd System
 #KDE uncomment konsole
 #konsole -e python3 MATTAutomata.py & 
