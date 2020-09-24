@@ -1,7 +1,7 @@
 #!/bin/sh
-gif-for-cli "HLD.gif"
+gif-for-cli "Prop/HLD.gif"
 wait
-gif-for-cli "HLD.gif"
+gif-for-cli "Prop/MATTBot.gif"
 wait
 
 cd System
@@ -18,7 +18,7 @@ clear
 echo "MATTBot 2020 activated"
 echo "designed and developed by Akhil P Jacob"
 echo "last updated on 12th AUGUST 2020"
-gif-for-cli "MATTBot.gif"
+gif-for-cli "Prop/HLD.gif"
 exit
 
 
