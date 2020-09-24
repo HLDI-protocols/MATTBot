@@ -1,5 +1,5 @@
 #!/bin/sh
-gif-for-cli "System/HLEngine/HL_Flags/updating_HLEngine.gif"
+gif-for-cli "MATTBot.gif"
 
 wait
 cd System
@@ -16,7 +16,7 @@ clear
 echo "MATTBot 2020 activated"
 echo "designed and developed by Akhil P Jacob"
 echo "last updated on 12th AUGUST 2020"
-gif-for-cli "System/HLEngine/HL_Flags/updating_HLEngine.gif"
+gif-for-cli "MATTBot.gif"
 exit
 
 
