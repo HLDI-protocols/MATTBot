@@ -34,6 +34,8 @@ while(True):
     Consciousness.radioMango(request)
     Consciousness.clubFM(request)
     Consciousness.akashavani(request)
+    Consciousness.chatClient(request)
+    Consciousness.chatServer(request)
     #Consciousness.IRIS(request)
     
     if(fetchBy=="off"):

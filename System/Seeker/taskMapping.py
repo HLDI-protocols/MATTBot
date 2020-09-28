@@ -79,3 +79,7 @@ RADIO_MANGO=("radiomango","radio_mango")
 AKASHA_VANI=("aakashavani,akasha_vani")
 
 CLUB_FM=("clubfm,club_fm")
+
+CHAT_ROOM_SERVER=("chatroom","chat_server","chat_room")
+
+CHAT_CLIENT=("chatclient","chat_client","chat")

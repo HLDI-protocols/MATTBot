@@ -305,16 +305,75 @@ def clubFM(param):
             webbrowser.open(link, new=2)
 
 
+def chatServer(param):
+    for word in param.split():
+        if word.lower() in taskMapping.CHAT_ROOM_SERVER:
+            HLEngine_Progressbar.progress("Initializing")
+            try:
+                import socket 
+                HOST = input('[Enter the system ip Address here]:')  # Standard loopback interface address (localhost)
+                PORT = 65432        # Port to listen on (non-privileged ports are > 1023)
+                NAME=input('[Enter your chat name: ')
+                print('[Started]')
+
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                    s.bind((HOST, PORT))
+                    s.listen()
+                    conn, addr = s.accept()
+                    with conn:
+                        print('Connected by', addr)
+                        while True:                            
+                            message=input(NAME)
+                            if(message=='exit'):
+                                break
+                            message=bytes(NAME+message, encoding="ascii")            
+                            conn.sendall(message)    
+                            data = conn.recv(1024)
+                            print(data.decode('utf-8'))
+            except:
+                print('[FATAL ERROR:Couldnt Launch Server]')
+
+def chatClient(param):
+    for word in param.split():
+        if word.lower() in taskMapping.CHAT_CLIENT:
+            HLEngine_Progressbar.progress("Initializing")
+            try:
+                
+                import socket
+
+                HOST = input('[Enter the chatroom ip]:')  # The server's hostname or IP address
+                PORT = 65432        # The port used by the server
+                NAME = input('[Enter your chat name]:')
+
+                with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                    s.connect((HOST, PORT))
+                    while True:
+                        data = s.recv(1024)
+                        print(data.decode('utf-8'))
+                        message=input(NAME)
+                        if(message=='exit'):
+                            break
+                        message=bytes(NAME+message, encoding="ascii")  
+                        s.sendall(message)
+            
+            except:
+                print('[FATAL ERROR:Couldnt Launch Client]')
 
 
-    
 
 
 
 
 
 
-    
+                    
+
+
+
+
+
+
+                    
 
 
 
