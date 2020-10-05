@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="MATT">
+    <file>HLD.png</file>
+    <file>HLD.gif</file>
+    <file>ubuntu.png</file>
+    <file>HLEngine.png</file>
+    <file>MattBot.png</file>
+  </qresource>
+</RCC>

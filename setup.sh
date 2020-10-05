@@ -34,3 +34,24 @@ python3 nlpFix.py &
 wait
 echo 'Hyper Library Dynamic Integration 2020 Environmenal setup completed SUCCESSFULLY';
 
+cd ..
+chmod +x playboy.sh
+wait
+chmod +x OUL.sh
+wait
+chmod +x tracker.sh
+wait
+chmod +x wakeup.sh
+wait
+
+cd ..
+
+chmod +x launcher.sh
+wait
+chmod +x console.sh
+wait
+chmod +x updates.sh
+wait
+
+echo "[MATTBOT is ready to use.... ENJOY !!!!!!]";
+
