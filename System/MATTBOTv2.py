@@ -4,8 +4,8 @@ Designed and Developed by Akhil P Jacob
 '''
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
-
+from Seeker import timeMapper
+import AutomataLib
 
 
 class MATTBOT(object):
@@ -186,14 +186,34 @@ class MATTBOT(object):
         self.progressBar.setObjectName("progressBar")
         self.tabWidget.addTab(self.tab_3, "")
 
+        self.pushButton.clicked.connect(self.seek)
+
+        self.timer = QtCore.QTimer(Dialog)
+        self.timer.setInterval(1000)
+        self.timer.timeout.connect(self.displayTime)
+        self.timer.start()
+
         self.retranslateUi(Dialog)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+    def displayTime(self):
+        self.label_2.setText(QtCore.QDateTime.currentDateTime().time().toString())
+        reminder=self.lineEdit_7.text()
+        reminder_data=self.lineEdit_8.text()
+        self.label_13.setText("Reminder: "+reminder_data)
+        AutomataLib.automata(self.label_2.text(),reminder)
+
+    def seek(self):
+        import terminal
+        data=self.lineEdit.text()
+        terminal.terminalAccess(data)
+        self.lineEdit.setText("")
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "MATTBOT 2020 ver 2.0"))
-        self.label_2.setText(_translate("Dialog", "21:10:30"))
+        self.label_2.setText(_translate("Dialog", "loading..."))
         self.pushButton.setText(_translate("Dialog", "Ask"))
         self.label_13.setText(_translate("Dialog", "Reminder: meeting at 10 pm"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Dialog", "MATTBOT"))
