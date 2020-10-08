@@ -30,10 +30,14 @@ def terminalAccess(request):
         Consciousness_Proto.radioMango(request)
         Consciousness_Proto.clubFM(request)
         Consciousness_Proto.akashavani(request)
-        Consciousness_Proto.chatClient(request)
-        Consciousness_Proto.chatServer(request)
-        #Consciousness_Proto.IRIS(request)
         
+        #Consciousness_Proto.IRIS(request)
+def terminalSubroutine(HOST,NAME,MESSAGE):
+        data=Consciousness_Proto.chatClient(HOST,NAME,MESSAGE)
+        return(data)
+def terminalSubroutine_2(HOST,NAME,MESSAGE):
+        data=Consciousness_Proto.chatServer(HOST,NAME,MESSAGE)
+        return(data)
         
     
 

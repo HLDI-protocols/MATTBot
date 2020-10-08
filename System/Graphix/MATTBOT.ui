@@ -245,29 +245,6 @@ color: rgb(3, 0, 255);</string>
       <string>Send</string>
      </property>
     </widget>
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>140</y>
-       <width>281</width>
-       <height>141</height>
-      </rect>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>279</width>
-        <height>139</height>
-       </rect>
-      </property>
-     </widget>
-    </widget>
     <widget class="QPushButton" name="pushButton_5">
      <property name="geometry">
       <rect>
@@ -298,6 +275,16 @@ color: rgb(3, 0, 255);</string>
      </property>
      <property name="text">
       <string>Disconnect</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowser">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>281</width>
+       <height>131</height>
+      </rect>
      </property>
     </widget>
    </widget>

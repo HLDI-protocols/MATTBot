@@ -6,4 +6,4 @@ echo "[Status:Started]";
 echo "[Status:Running]";
 wait
 cd System
-python3 MATTBOTv2.py
+python3 BOT.py

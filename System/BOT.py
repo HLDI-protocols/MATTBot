@@ -1,7 +1,9 @@
 '''
 Designed and Developed by Akhil P Jacob
+property of Hyper Library Dynamic Integrations
 
 '''
+
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Seeker import timeMapper
@@ -79,14 +81,6 @@ class MATTBOT(object):
         self.pushButton_4.setGeometry(QtCore.QRect(300, 100, 131, 25))
         self.pushButton_4.setStyleSheet("color: rgb(78, 154, 6);")
         self.pushButton_4.setObjectName("pushButton_4")
-        self.scrollArea = QtWidgets.QScrollArea(self.tab_2)
-        self.scrollArea.setGeometry(QtCore.QRect(10, 140, 281, 141))
-        self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 279, 139))
-        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
-        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.pushButton_5 = QtWidgets.QPushButton(self.tab_2)
         self.pushButton_5.setGeometry(QtCore.QRect(300, 140, 131, 25))
         self.pushButton_5.setStyleSheet("color: rgb(0, 0, 0);")
@@ -95,6 +89,9 @@ class MATTBOT(object):
         self.pushButton_6.setGeometry(QtCore.QRect(300, 180, 131, 25))
         self.pushButton_6.setStyleSheet("color: rgb(0, 0, 0);")
         self.pushButton_6.setObjectName("pushButton_6")
+        self.textBrowser = QtWidgets.QTextBrowser(self.tab_2)
+        self.textBrowser.setGeometry(QtCore.QRect(10, 140, 281, 131))
+        self.textBrowser.setObjectName("textBrowser")
         self.tabWidget.addTab(self.tab_2, "")
         self.tab_4 = QtWidgets.QWidget()
         self.tab_4.setObjectName("tab_4")
@@ -186,7 +183,11 @@ class MATTBOT(object):
         self.progressBar.setObjectName("progressBar")
         self.tabWidget.addTab(self.tab_3, "")
 
+
         self.pushButton.clicked.connect(self.seek)
+        self.pushButton_2.clicked.connect(self.chatServer)
+        self.pushButton_3.clicked.connect(self.chatClient)
+        
 
         self.timer = QtCore.QTimer(Dialog)
         self.timer.setInterval(1000)
@@ -203,7 +204,7 @@ class MATTBOT(object):
         reminder_data=self.lineEdit_8.text()
         self.label_13.setText("Reminder: "+reminder_data)
         AutomataLib.automata(self.label_2.text(),reminder)
-
+        
     def seek(self):
         import terminal
         data=self.lineEdit.text()
@@ -213,9 +214,9 @@ class MATTBOT(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "MATTBOT 2020 ver 2.0"))
-        self.label_2.setText(_translate("Dialog", "loading..."))
+        self.label_2.setText(_translate("Dialog", "Loading..."))
         self.pushButton.setText(_translate("Dialog", "Ask"))
-        self.label_13.setText(_translate("Dialog", "Reminder: meeting at 10 pm"))
+        self.label_13.setText(_translate("Dialog", ""))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("Dialog", "MATTBOT"))
         self.label_4.setText(_translate("Dialog", "IP "))
         self.pushButton_2.setText(_translate("Dialog", "Start"))
@@ -246,7 +247,6 @@ class MATTBOT(object):
         self.label_14.setText(_translate("Dialog", "Shutdown"))
         self.label_15.setText(_translate("Dialog", "Designed and Developed by Akhil P Jacob"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), _translate("Dialog", "Settings"))
-
 
 
 if __name__ == "__main__":
