@@ -6,6 +6,7 @@ def terminalAccess(request):
     
         
         fetchGr=Consciousness_Proto.greeting(request)
+        return fetchGr
         fetchBy=Consciousness_Proto.bye(request)   
         Fight=Consciousness_Proto.fight(request)
         #responser=Consciousness_Proto.superLogic(request)
@@ -32,14 +33,7 @@ def terminalAccess(request):
         Consciousness_Proto.akashavani(request)
         
         #Consciousness_Proto.IRIS(request)
-def terminalSubroutine(HOST,NAME,MESSAGE):
-        data=Consciousness_Proto.chatClient(HOST,NAME,MESSAGE)
-        return(data)
-def terminalSubroutine_2(HOST,NAME,MESSAGE):
-        data=Consciousness_Proto.chatServer(HOST,NAME,MESSAGE)
-        return(data)
-        
-    
+
 
  
     
