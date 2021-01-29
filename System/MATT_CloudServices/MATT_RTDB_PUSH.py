@@ -7,4 +7,4 @@ def fireRTDB_push(Message):
     firebase.put('/REMOTE_ACTION/','action',Message)
     return('[Record Updated]')
 
-fireRTDB_push("LIZZ")
+fireRTDB_push("LIZZ0")

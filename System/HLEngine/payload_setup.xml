@@ -39,11 +39,7 @@
         <payload name="37">pycryptodome</payload>
         <payload name="38">sseclient</payload>
         <payload name="39">requests-toolbelt</payload>
-        
-
-        
-        
-
+        <payload name="40">python_jwt</payload>
 
     </shelf>
 </HL_Engine>
