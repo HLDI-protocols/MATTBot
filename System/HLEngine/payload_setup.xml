@@ -32,6 +32,16 @@
         <payload name="30">scikit-learn</payload>
         <payload name="31">git-python</payload>
         <payload name="32">gif-for-cli</payload>
+        <payload name="33">firebase-admin</payload>
+        <payload name="34">firebase</payload>
+        <payload name="35">gcloud</payload>
+        <payload name="36">sseclient</payload>
+        <payload name="37">pycryptodome</payload>
+        <payload name="38">sseclient</payload>
+        <payload name="39">requests-toolbelt</payload>
+        
+
+        
         
 
 
