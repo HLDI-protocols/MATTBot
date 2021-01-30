@@ -1,10 +1,15 @@
-def fireRTDB_push(Message):
+def RTDB_PUSH(PATH,SUBPATH,Message):
+
+    try:
  
-    from firebase import firebase
-    firCon="https://mattbot-2d336.firebaseio.com/"
+        from firebase import firebase
+        firCon="https://mattbot-2d336.firebaseio.com/"
 
-    firebase = firebase.FirebaseApplication(firCon, None)
-    firebase.put('/REMOTE_ACTION/','action',Message)
-    return('[Record Updated]')
+        firebase = firebase.FirebaseApplication(firCon, None)
+        firebase.put(PATH,SUBPATH,Message)
+        #firebase.put('/REMOTE_ACTION/','action',Message)
+        return('[UPDATED to MATTcloud]')
 
-fireRTDB_push("LIZZ0")
+    except:
+
+        return('[ERROR IN FIRE RTDB_PUSH]')

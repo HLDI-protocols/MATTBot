@@ -1,19 +1,19 @@
 
-def fireFetch():
+def CLOUDDB_FETCHER(PATH,SUBPATH):
     
     try:
         import firebase_admin
         from firebase_admin import credentials, firestore
-        cred = credentials.Certificate("FireBase/swarm.json")
+        cred = credentials.Certificate("mattbot.json")
         firebase_admin.initialize_app(cred)
 
         usabledata=[]
 
         firestore_db = firestore.client()
-        snapshots = list(firestore_db.collection(u'GUIDANCE').get())
+        snapshots = list(firestore_db.collection(PATH).get())
         for snapshot in snapshots:
             data=snapshot.to_dict()
-            a=data['direction']
+            a=data[SUBPATH]
             usabledata.append(str(a))
         print(usabledata)
         pos=len(usabledata)
@@ -23,4 +23,4 @@ def fireFetch():
             print("[no change]")
 
     except:
-        print('[ERROR IN FIRE FETCH]')
+        print('[ERROR IN EXECUTING CLOUDDB_FETCHER ]')
