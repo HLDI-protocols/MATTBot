@@ -16,6 +16,8 @@ from HLEngine import HLEngine_ImageProcessing
 from Seeker import taskMapping
 from Seeker import timeMapper
 from MATT_Ware import Devices
+from King_Crypto import encode
+from King_Crypto import decode
 
 
 
@@ -326,10 +328,12 @@ def chatServer(param):
                             message=input(NAME)
                             if(message=='exit'):
                                 break
-                            message=bytes(NAME+message, encoding="ascii")            
-                            conn.sendall(message)    
-                            data = conn.recv(1024)
-                            print(data.decode('utf-8'))
+                            message=(NAME+message) 
+                            encrypedMessage=encode.dataEncryption(message)           
+                            conn.sendall(bytes(encrypedMessage, encoding="ascii"))  
+                            data = conn.recv(1024).decode('utf-8')
+                            decrypedMessage=decode.dataDecryption(data)
+                            print(decrypedMessage)
             except:
                 print('[FATAL ERROR:Couldnt Launch Server]')
 
@@ -348,13 +352,16 @@ def chatClient(param):
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                     s.connect((HOST, PORT))
                     while True:
-                        data = s.recv(1024)
-                        print(data.decode('utf-8'))
+                        data = s.recv(1024).decode('utf-8')
+                        decrypedmessage=decode.dataDecryption(data)
+                        print(decrypedmessage)
                         message=input(NAME)
                         if(message=='exit'):
                             break
-                        message=bytes(NAME+message, encoding="ascii")  
-                        s.sendall(message)
+                        
+                        message=(NAME+message)  
+                        encrypedMessage=encode.dataEncryption(message)
+                        s.sendall(bytes(encrypedMessage, encoding="ascii"))
             
             except:
                 print('[FATAL ERROR:Couldnt Launch Client]')
